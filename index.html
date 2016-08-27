@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Andrew Tate</title>
+    <meta name="author" content="Andrew Tate">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="main.css">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body class="animated fadeIn">
+    <header>
+        <a class="right" href="#">Take me to your website...</a>
+    </header>
+    <div id="link-pointer" class="hidden">
+        <span class="hidden left" id="pointer-text">But, if you're in a hurry, <br>you can just click here at any time.</span> <img src="hand-cursor-md.png">
+    </div>
+    <div id="impress">
+        <div class="step box" data-x="0" data-y="0">Hello, I’m Andrew!  I’ve prepared an inspiring presentation about (wait for it…) me!</div>
+        <div class="step box" data-x="1500" data-y="0">
+            I’m passionate about technology in general, and especially web technologies.
+            What fascinates me is that I can click a couple of buttons and suddenly my
+            ideas are available to billions of other humans.  That’s COOL!
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="impress.js"></script>
+    <script>
+        impress().init();
+
+        function hidePointer() {
+            $('#link-pointer').addClass('fadeOut');
+            $('#pointer-text').addClass('fadeOut');
+        }
+
+        function showPointer() {
+            $('#link-pointer').show().addClass('animated fadeInUp');
+            setTimeout(function() {$('#pointer-text').show().addClass('animated fadeIn')}, 1000);
+            setTimeout(hidePointer, 4000);
+        }
+
+        setTimeout(showPointer, 4000);
+    </script>
+</body>
+</html>

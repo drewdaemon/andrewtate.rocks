@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /*background-color: #2CA6A4;*/
+    background-color: #023C40;
+    font-family: 'Droid Serif', serif;
+}
+
+header {
+    padding: 10px;
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: black;
+    position: fixed;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.hidden {
+    display: none;
+}
+
+#link-pointer {
+    position: absolute;
+    right: 0;
+    top: 34px;
+    color: #F2E2D2;
+    font-size: 30px;
+}
+
+#pointer-text {
+    margin-top: 30px;
+}
+
+header a {
+    color: #F2E2D2;
+    text-decoration: none;
+}
+
+.box {
+    background-color: #F2E2D2;
+    width: 700px;
+    height: 500px;
+    font-size: 77px;
+    color: #141B41;
+    box-shadow: 2px 2px 4px #141B41;
+    padding: 20px;
+}
