@@ -19,14 +19,36 @@
         <a class="right" href="#">Take me to your website...</a>
     </header>
     <div id="link-pointer" class="hidden">
-        <span class="hidden left" id="pointer-text">But, if you're in a hurry, <br>you can just click here at any time.</span> <img src="hand-cursor-md.png">
+        <div class="hidden left" id="pointer-text">Or, if you're in a hurry, <br>you can just click here at any time.</div> <img src="hand-cursor-md.png">
     </div>
     <div id="impress">
-        <div class="step box" data-x="0" data-y="0">Hello, I’m Andrew!  I’ve prepared an inspiring presentation about (wait for it…) me!</div>
-        <div class="step box" data-x="1500" data-y="0">
-            I’m passionate about technology in general, and especially web technologies.
-            What fascinates me is that I can click a couple of buttons and suddenly my
-            ideas are available to billions of other humans.  That’s COOL!
+        <div class="step box" id="first" data-x="0" data-y="0">Hello, I’m Andrew!  Press the space bar or the right arrow key to learn more about me!</div>
+        <div class="step box" id="technologies" data-x="1500" data-y="0">
+            <div class="little">I can do cool things with websites using:</div>
+            <div style="clear:both"></div>
+            <div class="hidden technology">HTML,&nbsp</div>
+            <div class="hidden technology">CSS,&nbsp</div>
+            <div class="hidden technology">Javascript,&nbsp</div>
+            <div class="hidden technology">AngularJS,&nbsp</div>
+            <div class="hidden technology">NodeJS,&nbsp</div>
+            <div class="hidden technology">Jasmine,&nbsp</div>
+            <div class="hidden technology">AWS,&nbsp</div>
+            <div class="hidden technology">Flask,&nbsp</div>
+            <div class="hidden technology">SQL,&nbsp</div>
+            <div class="hidden technology">LESS,&nbsp</div>
+            <div class="hidden technology">MongoDB,&nbsp</div>
+            <div class="hidden technology">and <strong>tons</strong> of other stuff...</div>
+            <!--What fascinates me is that I can click a couple of buttons and suddenly my
+            ideas are available to billions of other humans.  That’s COOL!-->
+        </div>
+        <div class="step" id="big-pic" data-x="1000" data-y="1000" data-z="1000" data-scale="4">
+            I like it when I can see the<br><span class="big">BIG PICTURE</span>
+        </div>
+        <div class="step" id="details" data-x="1000" data-y="1000" data-z="-1000" data-scale="1">
+            It helps me dive into <em>important details...</em>
+        </div>
+        <div class="step" id="details" data-x="1000" data-y="1000" data-z="-1000" data-scale="1">
+            It helps me dive into <em>important details...</em>
         </div>
     </div>
 
@@ -47,7 +69,26 @@
             setTimeout(hidePointer, 4000);
         }
 
-        setTimeout(showPointer, 4000);
+        $('#first').on('impress:stepenter', function () {setTimeout(showPointer, 3500)});
+
+        $('#technologies').on('impress:stepenter', function () {
+            var technologies = $(this).children('div.technology');
+            setTimeout(function () {technologies.eq(0).show().addClass('animated bounceInLeft');}, 1000);
+            setTimeout(function () {technologies.eq(1).show().addClass('animated rotateInUpRight');}, 1500);
+            setTimeout(function () {technologies.eq(2).show().addClass('animated zoomInRight');}, 2000);
+            setTimeout(function () {technologies.eq(3).show().addClass('animated zoomInDown');}, 2500);
+            setTimeout(function () {technologies.eq(4).show().addClass('animated zoomInUp');}, 3000);
+            setTimeout(function () {technologies.eq(5).show().addClass('animated bounceInRight');}, 3500);
+            setTimeout(function () {technologies.eq(6).show().addClass('animated zoomInRight');}, 4000);
+            setTimeout(function () {technologies.eq(7).show().addClass('animated zoomInRight');}, 4500);
+            setTimeout(function () {technologies.eq(8).show().addClass('animated zoomInRight');}, 5000);
+            setTimeout(function () {technologies.eq(8).show().addClass('animated zoomInRight');}, 5500);
+            setTimeout(function () {technologies.eq(9).show().addClass('animated fadIn rubberBand');}, 5500);
+            setTimeout(function () {technologies.eq(10).show().addClass('animated zoomInRight');}, 6000);
+            setTimeout(function () {technologies.eq(11).show().addClass('animated zoomIn');}, 6800);
+
+            // technologies[0]..addClass('animated fadeInUp');
+        });
     </script>
 </body>
 </html>

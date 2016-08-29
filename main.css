@@ -6,6 +6,8 @@
 body {
     /*background-color: #2CA6A4;*/
     background-color: #023C40;
+    background-image: url('webdev.png');
+    color: #F2E2D2;
     font-family: 'Droid Serif', serif;
 }
 
@@ -33,19 +35,45 @@ header {
 
 #link-pointer {
     position: absolute;
+    z-index: 1;
     right: 0;
     top: 34px;
-    color: #F2E2D2;
     font-size: 30px;
 }
 
 #pointer-text {
     margin-top: 30px;
+    background-color: #023C40;
+    padding: 8px;
+    border: 1px solid #F2E2D2;
+    border-radius: 5px;
+}
+
+#big-pic {
+    width: 1000px;
+    font-size: 30px;
+}
+
+#big-pic .big {
+    font-size: 150px;
+}
+
+#details {
+    font-size: 40px;
+}
+
+#technologies .little {
+    font-size: 45px;
+}
+
+#technologies div {
+    font-size: 60px;
+    float: left;
 }
 
 header a {
-    color: #F2E2D2;
     text-decoration: none;
+    color: #F2E2D2;
 }
 
 .box {
