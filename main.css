@@ -6,7 +6,7 @@
 body {
     /*background-color: #2CA6A4;*/
     background-color: #023C40;
-    background-image: url('webdev.png');
+    background-image: url('img/webdev.png');
     background-size: cover;
     color: #F2E2D2;
     font-family: 'Droid Serif', serif;
@@ -52,12 +52,16 @@ header {
 }
 
 #big-pic {
-    width: 1000px;
+    width: 1040px;
     font-size: 30px;
 }
 
 #big-pic .big {
-    font-size: 150px;
+    font-size: 125px;
+}
+
+#landscape {
+    width: 245px;
 }
 
 #details {
