@@ -63,12 +63,20 @@ header {
 }
 
 #technologies .little {
-    font-size: 45px;
+    font-size: 40px;
 }
 
-#technologies div {
-    font-size: 60px;
+#technologies div.technology {
+    font-size: 40px;
     float: left;
+    height: 100px;
+    line-height: 100px;
+    vertical-align: middle;
+}
+
+.logo {
+    width: auto;
+    height: 90px;
 }
 
 header a {
