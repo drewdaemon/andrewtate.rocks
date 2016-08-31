@@ -7,7 +7,7 @@
     <title>Andrew Tate</title>
     <meta name="author" content="Andrew Tate">
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
-    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="lib/animate.css">
     <link rel="stylesheet" href="main.css">
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -22,7 +22,7 @@
         <div class="hidden left" id="pointer-text">If you're in a hurry, <br>you can just click here at any time.</div> <img src="img/hand-cursor-md.png">
     </div>
     <div id="impress">
-        <div class="step box" id="first" data-x="0" data-y="0">Hello, I’m Andrew!  Press the space bar or the right arrow key to learn more about me!</div>
+        <div class="step box" id="first" data-x="0" data-y="0"></div>
         <div class="step box" id="technologies" data-x="1500" data-y="0">
             <div class="little">I can do cool things with:</div>
             <div style="clear:both"></div>
@@ -45,7 +45,7 @@
         </div>
         <div class="step" id="big-pic" data-x="1000" data-y="1000" data-z="1000" data-scale="4">
             <div class="left">I like it when I can see the<br><span class="big">BIG PICTURE</span></div>
-            <div class="right"><object id="landscape" type="image/svg+xml" data="img/landscape.svg"></object></div>
+            <div id="landscape-container" class="right invisible"><object id="landscape" type="image/svg+xml" data="img/landscape.svg"></object></div>
         </div>
         <div class="step" id="details" data-x="1000" data-y="1000" data-z="-1000" data-scale="1">
             It helps me dive into <em>important details...</em>
@@ -58,9 +58,12 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="node_modules/vivus/dist/vivus.js"></script>
-    <script src="impress.js"></script>
+    <script src="lib/typed.js"></script>
+    <script src="lib/impress.js"></script>
     <script>
         impress().init();
+
+        window.location.hash = 'first';
 
         function hidePointer() {
             $('#link-pointer').addClass('fadeOut');
@@ -75,7 +78,22 @@
 
         setTimeout(function() {$('body').show().addClass('animated fadeIn');}, 500);
 
-        $('#first').on('impress:stepenter', function () {setTimeout(showPointer, 3500)});
+        $('#first').on('impress:stepenter', function () {
+            $(function () {
+                $("#first").typed({
+                    strings: ['Hello, I’m Andrew! ^1000', 'Press space bar <br> to learn <br> more about me!'],
+                    typeSpeed: 0,
+                    startDelay: 1000,
+                    showCursor: false,
+                    callback: showPointer,
+                    contentType: 'html'
+                });
+            });
+        });
+
+        $('#big-pic').on('impress:stepenter', function () {
+            setTimeout(function () {$('#landscape-container').removeClass('invisible').addClass('animated fadeIn');}, 500);
+        });
 
         $('#technologies').on('impress:stepenter', function () {
             var technologies = $(this).children('div.technology');

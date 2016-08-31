@@ -35,6 +35,15 @@ header {
     display: none;
 }
 
+#first {
+    background: none;
+    color: #F2E2D2;
+    box-shadow: none;
+    width: 700px;
+    height: 300px;
+    text-align: center;
+}
+
 #link-pointer {
     position: absolute;
     z-index: 1;
@@ -45,7 +54,7 @@ header {
 
 #pointer-text {
     margin-top: 30px;
-    background-color: #023C40;
+    background: none;
     padding: 8px;
     border: 1px solid #F2E2D2;
     border-radius: 5px;
