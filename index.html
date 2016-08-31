@@ -14,7 +14,7 @@
   <![endif]-->
 </head>
 
-<body class="animated fadeIn">
+<body>
     <header>
         <a class="right" href="#">Take me to your website...</a>
     </header>
@@ -26,18 +26,18 @@
         <div class="step box" id="technologies" data-x="1500" data-y="0">
             <div class="little">I can do cool things with:</div>
             <div style="clear:both"></div>
-            <div class="hidden technology"><img class="logo left" src="logos/html5.png">HTML,&nbsp</div>
-            <div class="hidden technology"><img class="logo left" src="logos/css3.svg">CSS,&nbsp</div>
-            <div class="hidden technology"><img class="logo left" src="logos/js.png">&nbspJavascript,&nbsp</div>
-            <div class="hidden technology"><img class="logo left" src="logos/angular.svg">AngularJS,&nbsp</div>
-            <div class="hidden technology"><img class="logo left" src="logos/node.svg">&nbspNodeJS,&nbsp</div>
+            <div class="hidden technology"><img class="logo left" src="img/logos/html5.png">HTML,&nbsp</div>
+            <div class="hidden technology"><img class="logo left" src="img/logos/css3.svg">CSS,&nbsp</div>
+            <div class="hidden technology"><img class="logo left" src="img/logos/js.png">&nbspJavascript,&nbsp</div>
+            <div class="hidden technology"><img class="logo left" src="img/logos/angular.svg">AngularJS,&nbsp</div>
+            <div class="hidden technology"><img class="logo left" src="img/logos/node.svg">&nbspNodeJS,&nbsp</div>
             <!--<div class="hidden technology">&nbspPython,&nbsp</div>-->
-            <div class="hidden technology"><img class="logo left" src="logos/jasmine.svg">&nbspJasmine,&nbsp</div>
-            <div class="hidden technology"><img class="logo left" src="logos/aws.png">AWS,&nbsp</div>
-            <div class="hidden technology"><img class="logo left" src="logos/flask.png">Flask,&nbsp</div>
+            <div class="hidden technology"><img class="logo left" src="img/logos/jasmine.svg">&nbspJasmine,&nbsp</div>
+            <div class="hidden technology"><img class="logo left" src="img/logos/aws.png">AWS,&nbsp</div>
+            <div class="hidden technology"><img class="logo left" src="img/logos/flask.png">Flask,&nbsp</div>
             <div class="hidden technology">SQL,&nbsp</div>
-            <div class="hidden technology"><img class="logo left" src="logos/less.png"></div>
-            <div class="hidden technology"><img class="logo left" src="logos/mongo-leaf.png">MongoDB,&nbsp</div>
+            <div class="hidden technology"><img class="logo left" src="img/logos/less.png"></div>
+            <div class="hidden technology"><img class="logo left" src="img/logos/mongo-leaf.png">MongoDB,&nbsp</div>
             <!--<div class="hidden technology"><img class="logo left" src="logos/mongo-big.png"></div>-->
             <div class="hidden technology">and <strong>tons</strong> of other stuff...</div>
             <!--What fascinates me is that I can click a couple of buttons and suddenly my
@@ -49,8 +49,8 @@
         <div class="step" id="details" data-x="1000" data-y="1000" data-z="-1000" data-scale="1">
             It helps me dive into <em>important details...</em>
         </div>
-        <div class="step" id="details" data-x="1000" data-y="1000" data-z="-1000" data-scale="1">
-            It helps me dive into <em>important details...</em>
+        <div class="step" id="angle" data-x="0" data-y="0" data-z="-1000" data-rotate-y="180" data-rotate-x="180" data-scale="1">
+            And view things with a better perspective. <object type="image/svg+xml" data="img/lightbulb.svg"></object>
         </div>
     </div>
 
@@ -70,6 +70,8 @@
             setTimeout(function() {$('#pointer-text').show().addClass('animated fadeIn')}, 1000);
             setTimeout(hidePointer, 4000);
         }
+
+        setTimeout(function() {$('body').show().addClass('animated fadeIn');}, 500);
 
         $('#first').on('impress:stepenter', function () {setTimeout(showPointer, 3500)});
 
@@ -91,6 +93,15 @@
 
             // technologies[0]..addClass('animated fadeInUp');
         });
+
+        $('#details').on('impress:stepenter', function () {
+            $('#angle').show();
+        });
+
+        $('#angle').on('impress:stepenter', function () {
+            $('#angle').show();
+        });
+
     </script>
 </body>
 </html>

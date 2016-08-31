@@ -9,6 +9,7 @@ body {
     background-image: url('webdev.png');
     color: #F2E2D2;
     font-family: 'Droid Serif', serif;
+    display: none;
 }
 
 header {
@@ -72,6 +73,12 @@ header {
     height: 100px;
     line-height: 100px;
     vertical-align: middle;
+}
+
+#angle {
+    font-size: 77px;
+    width: 700px;
+    display: none;
 }
 
 .logo {
