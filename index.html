@@ -19,7 +19,7 @@
         <a class="right" href="#">Take me to your website...</a>
     </header>
     <div id="link-pointer" class="hidden">
-        <div class="hidden left" id="pointer-text">Or, if you're in a hurry, <br>you can just click here at any time.</div> <img src="hand-cursor-md.png">
+        <div class="hidden left" id="pointer-text">If you're in a hurry, <br>you can just click here at any time.</div> <img src="hand-cursor-md.png">
     </div>
     <div id="impress">
         <div class="step box" id="first" data-x="0" data-y="0">Hello, I’m Andrew!  Press the space bar or the right arrow key to learn more about me!</div>
@@ -50,12 +50,13 @@
             It helps me dive into <em>important details...</em>
         </div>
         <div class="step" id="angle" data-x="0" data-y="0" data-z="-1000" data-rotate-y="180" data-rotate-x="180" data-scale="1">
-            And view things with a better perspective. <object type="image/svg+xml" data="img/lightbulb.svg"></object>
+            And get ideas for improvement! <div id="lightbulb-container" class="invisible"><object id="lightbulb" type="image/svg+xml" data="img/lightbulb.svg"></object></div>
         </div>
     </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="node_modules/vivus/dist/vivus.js"></script>
     <script src="impress.js"></script>
     <script>
         impress().init();
@@ -77,19 +78,19 @@
 
         $('#technologies').on('impress:stepenter', function () {
             var technologies = $(this).children('div.technology');
-            setTimeout(function () {technologies.eq(0).show().addClass('animated bounceInLeft');}, 1000);
-            setTimeout(function () {technologies.eq(1).show().addClass('animated rotateInUpRight');}, 1500);
-            setTimeout(function () {technologies.eq(2).show().addClass('animated zoomInRight');}, 2000);
-            setTimeout(function () {technologies.eq(3).show().addClass('animated zoomInDown');}, 2500);
-            setTimeout(function () {technologies.eq(4).show().addClass('animated zoomInUp');}, 3000);
-            setTimeout(function () {technologies.eq(5).show().addClass('animated bounceInRight');}, 3500);
-            setTimeout(function () {technologies.eq(6).show().addClass('animated zoomInRight');}, 4000);
-            setTimeout(function () {technologies.eq(7).show().addClass('animated zoomInRight');}, 4500);
+            setTimeout(function () {technologies.eq(0).show().addClass('animated bounceInLeft');}, 500);
+            setTimeout(function () {technologies.eq(1).show().addClass('animated rotateInUpRight');}, 1000);
+            setTimeout(function () {technologies.eq(2).show().addClass('animated zoomInRight');}, 1500);
+            setTimeout(function () {technologies.eq(3).show().addClass('animated zoomInDown');}, 2000);
+            setTimeout(function () {technologies.eq(4).show().addClass('animated zoomInUp');}, 2500);
+            setTimeout(function () {technologies.eq(5).show().addClass('animated bounceInRight');}, 3000);
+            setTimeout(function () {technologies.eq(6).show().addClass('animated zoomInRight');}, 3500);
+            setTimeout(function () {technologies.eq(7).show().addClass('animated zoomInRight');}, 4000);
+            setTimeout(function () {technologies.eq(8).show().addClass('animated zoomInRight');}, 4500);
             setTimeout(function () {technologies.eq(8).show().addClass('animated zoomInRight');}, 5000);
-            setTimeout(function () {technologies.eq(8).show().addClass('animated zoomInRight');}, 5500);
-            setTimeout(function () {technologies.eq(9).show().addClass('animated fadIn rubberBand');}, 5500);
-            setTimeout(function () {technologies.eq(10).show().addClass('animated zoomInRight');}, 6000);
-            setTimeout(function () {technologies.eq(11).show().addClass('animated zoomIn');}, 6800);
+            setTimeout(function () {technologies.eq(9).show().addClass('animated fadIn rubberBand');}, 5000);
+            setTimeout(function () {technologies.eq(10).show().addClass('animated zoomInRight');}, 5500);
+            setTimeout(function () {technologies.eq(11).show().addClass('animated zoomIn');}, 6400);
 
             // technologies[0]..addClass('animated fadeInUp');
         });
@@ -98,8 +99,17 @@
             $('#angle').show();
         });
 
+        lightBulbVis = false;
+
         $('#angle').on('impress:stepenter', function () {
             $('#angle').show();
+            if (!lightBulbVis) {
+                setTimeout(function () {
+                    $('#lightbulb-container').removeClass('invisible');
+                    new Vivus('lightbulb', {duration: 200, pathTimingFunction: Vivus.EASE_IN, type: 'async'});
+                    lightBulbVis = true;
+                }, 500);
+            }
         });
 
     </script>

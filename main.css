@@ -7,6 +7,7 @@ body {
     /*background-color: #2CA6A4;*/
     background-color: #023C40;
     background-image: url('webdev.png');
+    background-size: cover;
     color: #F2E2D2;
     font-family: 'Droid Serif', serif;
     display: none;
@@ -76,9 +77,23 @@ header {
 }
 
 #angle {
+    text-align: center;
     font-size: 77px;
     width: 700px;
     display: none;
+}
+
+#lightbulb {
+    margin: 0 auto;
+    display: block;
+}
+
+#lightbulb-container {
+    margin: 0 auto;
+}
+
+.invisible {
+    visibility: hidden;
 }
 
 .logo {
