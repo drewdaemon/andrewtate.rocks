@@ -16,10 +16,13 @@
 
 <body>
     <header>
-        <a class="right" href="#">Take me to your website...</a>
+        <a class="right" href="http://andrewtate.rocks">Take me to your website...</a>
     </header>
     <div id="link-pointer" class="hidden">
-        <div class="hidden left" id="pointer-text">If you're in a hurry, <br>you can just click here at any time.</div> <img src="img/hand-cursor-md.png">
+        <div class="hidden left" id="pointer-text">Or, if you're in a hurry, <br>you can just click here at any time.</div> <img src="img/hand-cursor-md.png">
+    </div>
+    <div id="overlay">
+        <div id="redirect-message">And now to my website...</div>
     </div>
     <div id="impress">
         <div class="step box" id="first" data-x="0" data-y="0"></div>
@@ -92,7 +95,7 @@
         });
 
         $('#big-pic').on('impress:stepenter', function () {
-            setTimeout(function () {$('#landscape-container').removeClass('invisible').addClass('animated fadeIn');}, 500);
+            setTimeout(function () {$('#landscape-container').removeClass('invisible').addClass('animated fadeIn');}, 1000);
         });
 
         $('#technologies').on('impress:stepenter', function () {
@@ -107,28 +110,29 @@
             setTimeout(function () {technologies.eq(7).show().addClass('animated zoomInRight');}, 4000);
             setTimeout(function () {technologies.eq(8).show().addClass('animated zoomInRight');}, 4500);
             setTimeout(function () {technologies.eq(8).show().addClass('animated zoomInRight');}, 5000);
-            setTimeout(function () {technologies.eq(9).show().addClass('animated fadIn rubberBand');}, 5000);
+            setTimeout(function () {technologies.eq(9).show().addClass('animated rubberBand');}, 5000);
             setTimeout(function () {technologies.eq(10).show().addClass('animated zoomInRight');}, 5500);
             setTimeout(function () {technologies.eq(11).show().addClass('animated zoomIn');}, 6400);
-
-            // technologies[0]..addClass('animated fadeInUp');
         });
 
         $('#details').on('impress:stepenter', function () {
             $('#angle').show();
         });
 
-        lightBulbVis = false;
-
         $('#angle').on('impress:stepenter', function () {
             $('#angle').show();
-            if (!lightBulbVis) {
-                setTimeout(function () {
-                    $('#lightbulb-container').removeClass('invisible');
-                    new Vivus('lightbulb', {duration: 200, pathTimingFunction: Vivus.EASE_IN, type: 'async'});
-                    lightBulbVis = true;
-                }, 500);
-            }
+            setTimeout(function () {
+                $('#lightbulb-container').removeClass('invisible');
+                new Vivus('lightbulb', {duration: 200, pathTimingFunction: Vivus.EASE_IN, type: 'async'}, function () {
+                    setTimeout(function () {
+                        $('#impress').addClass('animated fadeOut');
+                        $('#overlay').show().addClass('animated fadeIn');
+                    }, 4000);
+                    setTimeout(function () {
+                        window.location.assign('http://andrewtate.rocks');
+                    }, 8000)
+                });
+            }, 500);
         });
 
     </script>
