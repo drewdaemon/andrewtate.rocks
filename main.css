@@ -10,7 +10,6 @@ body {
     background-size: cover;
     color: #F2E2D2;
     font-family: 'Droid Serif', serif;
-    display: none;
 }
 
 header {
@@ -109,13 +108,12 @@ header {
     background-color: black;
     width: 100%;
     height: 100%;
-    display: none;
     font-size: 50px;
     padding: 10px;
 }
 
 #redirect-message {
-    display: block;
+    display: none;
     text-align: center;
     position: absolute;
     top: 0;

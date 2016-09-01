@@ -24,7 +24,7 @@
     <div id="overlay">
         <div id="redirect-message">And now to my website...</div>
     </div>
-    <div id="impress">
+    <div id="impress" class="hidden">
         <div class="step box" id="first" data-x="0" data-y="0"></div>
         <div class="step box" id="technologies" data-x="1500" data-y="0">
             <div class="little">I can do cool things with:</div>
@@ -66,7 +66,7 @@
     <script>
         impress().init();
 
-        window.location.hash = 'first';
+        window.location.hash = '/first';
 
         function hidePointer() {
             $('#link-pointer').addClass('fadeOut');
@@ -79,7 +79,10 @@
             setTimeout(hidePointer, 4000);
         }
 
-        setTimeout(function() {$('body').show().addClass('animated fadeIn');}, 500);
+        setTimeout(function () {
+            $('#impress').show().addClass('animated fadeIn');
+            $('#overlay').addClass('animated fadeOut');
+        }, 500);
 
         $('#first').on('impress:stepenter', function () {
             $(function () {
@@ -126,8 +129,10 @@
                 new Vivus('lightbulb', {duration: 200, pathTimingFunction: Vivus.EASE_IN, type: 'async'}, function () {
                     setTimeout(function () {
                         $('#impress').addClass('animated fadeOut');
-                        $('#overlay').show().addClass('animated fadeIn');
-                    }, 4000);
+                        $('#overlay').removeClass('animated fadeOut');
+                        $('#overlay').addClass('animated fadeIn');
+                        $('#redirect-message').show();
+                    }, 2500);
                     setTimeout(function () {
                         window.location.assign('http://andrewtate.rocks');
                     }, 8000)
