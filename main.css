@@ -88,6 +88,13 @@ header {
     vertical-align: middle;
 }
 
+#dive {
+    display: inline;
+    position: absolute;
+    top: 47px;
+    right: 44px;
+}
+
 #angle {
     text-align: center;
     font-size: 77px;

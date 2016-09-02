@@ -7,6 +7,7 @@
     <title>Andrew Tate</title>
     <meta name="author" content="Andrew Tate">
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="lib/animate.css">
     <link rel="stylesheet" href="main.css">
   <!--[if lt IE 9]>
@@ -49,7 +50,7 @@
             <div id="landscape-container" class="right invisible"><object id="landscape" type="image/svg+xml" data="img/landscape.svg"></object></div>
         </div>
         <div class="step" id="details" data-x="1000" data-y="1000" data-z="-1000" data-scale="1">
-            It helps me dive into <em>important details...</em>
+            It helps me <br> <div id="dive">dive</div> into <em>important details...</em>
         </div>
         <div class="step" id="angle" data-x="0" data-y="0" data-z="-1000" data-rotate-y="90" data-rotate-x="-90" data-scale="1">
             And get ideas for improvement! <div id="lightbulb-container" class="invisible"><object id="lightbulb" type="image/svg+xml" data="img/lightbulb.svg"></object></div>
@@ -58,6 +59,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
     <script src="node_modules/vivus/dist/vivus.js"></script>
     <script src="lib/typed.js"></script>
     <script src="lib/impress.js"></script>
@@ -95,10 +97,6 @@
             });
         });
 
-        $('#big-pic').on('impress:stepenter', function () {
-            setTimeout(function () {$('#landscape-container').removeClass('invisible').addClass('animated fadeIn');}, 1000);
-        });
-
         $('#technologies').on('impress:stepenter', function () {
             var technologies = $(this).children('div.technology');
             setTimeout(function () {technologies.eq(0).show().addClass('animated bounceInLeft');}, 500);
@@ -116,8 +114,34 @@
             setTimeout(function () {technologies.eq(11).show().addClass('animated zoomIn');}, 6400);
         });
 
+        $('#big-pic').on('impress:stepenter', function () {
+            setTimeout(function () {$('#landscape-container').removeClass('invisible').addClass('animated fadeIn');}, 1000);
+        });
+
+        function jump () {
+            $('#dive').animate({top: "+=1000px", left: "+=300px"}, {
+                duration: 600,
+                specialEasing: {top: 'easeInQuad', left: 'easeOutQuad'},
+                complete: function () {
+                    $('#dive').hide();
+                }
+            });
+        }
+
         $('#details').on('impress:stepenter', function () {
             $('#angle').show();
+            $('#dive').animate(
+                {
+                    right: '-=80px',
+                },
+                {
+                    duration: 600,
+                    complete: function () {
+                        $('#dive').addClass('animated bounce');
+                        setTimeout(jump, 1500)
+                    }
+                }
+            );
         });
 
         $('#angle').on('impress:stepenter', function () {
