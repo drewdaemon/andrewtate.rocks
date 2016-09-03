@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/drewctate/impress#readme",
   "dependencies": {
+    "font-awesome": "^4.6.3",
     "vivus": "^0.3.1"
   },
   "devDependencies": {
