@@ -17,6 +17,7 @@ header {
     width: 100%;
     box-sizing: border-box;
     text-align: center;
+    z-index: 1;
     background: rgba(0,0,0,.5);
     top: 0;
     position: fixed;
@@ -49,8 +50,14 @@ i {
     float: left;
 }
 
-.hidden {
+.no-show {
     display: none;
+}
+
+#impress * {
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    line-height: initial;
 }
 
 #first {
@@ -139,6 +146,10 @@ i {
     padding: 10px;
 }
 
+ #portfolio {
+     display: none;
+ }
+
 #redirect-message {
     display: none;
     text-align: center;
@@ -169,7 +180,7 @@ header a {
 .box {
     background-color: #F2E2D2;
     width: 700px;
-    height: 500px;
+    height: 515px;
     font-size: 77px;
     color: #141B41;
     box-shadow: 2px 2px 4px #141B41;
