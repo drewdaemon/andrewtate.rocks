@@ -38,8 +38,8 @@
                     <!-- Page Header -->
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Page Heading
-                                <small>Secondary Text</small>
+                            <h1 class="page-header">My Portfolio
+                                <small>(it rocks)</small>
                             </h1>
                         </div>
                     </div>
@@ -48,22 +48,22 @@
                     <!-- Projects Row -->
                     <div class="row">
                         <div class="col-md-6 portfolio-item">
-                            <a href="#">
-                                <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                            <a target="_blank" href="http://www.journeylearner.org">
+                                <img class="img-responsive" src="img/journey_learner.png" alt="">
                             </a>
                             <h3>
-                                <a href="#">Project One</a>
+                                <a target="_blank" href="http://www.journeylearner.org">Journey Learner</a>
                             </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                            <p>An educational app designed to increase spatial understanding of the great tales of exploration. Built using MEAN stack integrated with AWS cloud services.</p>
                         </div>
                         <div class="col-md-6 portfolio-item">
-                            <a href="#">
-                                <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                            <a target="_blank" href="https://github.com/drewctate/amazon_order_history_scraper">
+                                <img class="img-responsive" src="img/amazon_order_scraper.jpg" alt="">
                             </a>
                             <h3>
-                                <a href="#">Project Two</a>
+                                <a target="_blank" href="https://github.com/drewctate/amazon_order_history_scraper">Amazon.com Order History Scraper</a>
                             </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                            <p>Scraper built with python and Selenium browser driver to gather order history in a given date range. Commissioned by VidAngel LLC.</p>
                         </div>
                     </div>
                     <!-- /.row -->
@@ -72,7 +72,7 @@
                     <div class="row">
                         <div class="col-md-6 portfolio-item">
                             <a href="#">
-                                <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                                <img class="img-responsive" src="img/whackamole.png" alt="">
                             </a>
                             <h3>
                                 <a href="#">Project Three</a>
@@ -162,7 +162,7 @@
                 <!-- /.container -->
         </div>
     </div>
-    <div id="impress" class="no-show">
+    <div id="impress">
         <div class="step box" id="first" data-x="0" data-y="0"></div>
         <div class="step box" id="technologies" data-x="1500" data-y="0">
             <div class="little">I can do cool things with:</div>
@@ -290,7 +290,6 @@
                         $('#impress').addClass('animated fadeOut');
                         $('#overlay').removeClass('animated fadeOut');
                         $('#overlay').addClass('animated fadeIn');
-                        $('body').css('overflow', 'visible')
                         $('#portfolio').show();
                     }, 2500);
                 });

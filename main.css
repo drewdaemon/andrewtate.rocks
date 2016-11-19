@@ -144,11 +144,18 @@ i {
     margin-top: 40px;
     font-size: 50px;
     padding: 10px;
+    overflow-y: auto;
 }
 
- #portfolio {
+#portfolio {
      display: none;
- }
+     background-color: black;
+     width: 100%;
+}
+
+#portfolio p {
+    font-size: 20px;
+}
 
 #redirect-message {
     display: none;
@@ -173,6 +180,11 @@ i {
 }
 
 header a {
+    text-decoration: none;
+    color: #F2E2D2;
+}
+
+header a:hover {
     text-decoration: none;
     color: #F2E2D2;
 }
