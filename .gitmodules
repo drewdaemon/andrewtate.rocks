@@ -1,0 +1,3 @@
+[submodule "whackamole"]
+	path = whackamole
+	url = https://github.com/drewctate/whackamole.git
