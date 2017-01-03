@@ -25,7 +25,7 @@
             <a class="social" href="https://www.facebook.com/drewctate" target="_blank"><div class="social-cont"><i class="fa fa-facebook" aria-hidden="true"></i>facebook</div></a>
             <a class="social"><div class="social-cont"><i class="fa fa-paper-plane" aria-hidden="true" target="_blank"></i>resume</div></a>
         </div>
-        <div class="social-cont right"><a href="http://andrewtate.rocks">My Portfolio</a></div>
+        <div class="social-cont right"><a href="#" id="showPF">My Portfolio</a></div>
     </header>
     <div id="link-pointer" class="no-show">
         <div class="no-show left" id="pointer-text">Or, if you're in a hurry, <br>you can just click here at any time.</div> <img src="img/hand-cursor-md.png">
@@ -217,9 +217,20 @@
             setTimeout(hidePointer, 4000);
         }
 
+        function showPortfolio() {
+            $('#impress').addClass('animated fadeOut');
+            $('#overlay').removeClass('animated fadeOut');
+            $('#overlay').addClass('animated fadeIn');
+            $('#portfolio').show();
+        }
+
         setTimeout(function () {
             $('#overlay').addClass('animated fadeOut');
         }, 500);
+
+        $('#showPF').on('click', function () {
+            showPortfolio();
+        });
 
         $('#first').on('impress:stepenter', function () {
             $(function () {
@@ -228,7 +239,7 @@
                     typeSpeed: 0,
                     startDelay: 1000,
                     showCursor: false,
-                    callback: showPointer,
+                    // callback: showPointer,
                     contentType: 'html'
                 });
             });
@@ -287,10 +298,7 @@
                 $('#lightbulb-container').removeClass('invisible');
                 new Vivus('lightbulb', {duration: 200, pathTimingFunction: Vivus.EASE_IN, type: 'async'}, function () {
                     setTimeout(function () {
-                        $('#impress').addClass('animated fadeOut');
-                        $('#overlay').removeClass('animated fadeOut');
-                        $('#overlay').addClass('animated fadeIn');
-                        $('#portfolio').show();
+                        showPortfolio();
                     }, 2500);
                 });
             }, 500);
