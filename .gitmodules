@@ -1,7 +1,7 @@
 [submodule "whackamole"]
-	path = whackamole
+	path = projects/whackamole
 	url = https://github.com/drewctate/whackamole.git
 [submodule "forest-fire-model"]
-	path = forest-fire-model
+	path = projects/forest-fire-model
 	url = https://github.com/drewctate/forest-fire-model.git
 	branch = master
