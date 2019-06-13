@@ -1,10 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
+
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   plugins: [
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 3000,
+      proxy: 'http://localhost:8080/'
+    }),
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: "jquery",
